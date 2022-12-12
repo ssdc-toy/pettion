@@ -8,7 +8,8 @@
 - 태그명 이슈번호 : description
     - ex) feat #3 : jwtProvider 구현
 - 태그 목록
-[태그 목록 이미지 넣기] 
+<img width="701" alt="image" src="https://user-images.githubusercontent.com/55674648/207084615-98165e90-91a3-4f29-a6ed-c91950072b46.png">
+
 
 ### 브랜치 전략 
 - 브랜치 태그/이슈번호/부가설명(선택)
