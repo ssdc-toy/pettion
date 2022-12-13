@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BidderRepository extends JpaRepository<Bidder, Long> {
-    boolean existsByAccountIdOOrNickname(String accountId, String nickname);
+    boolean existsByAccountIdOrNickname(String accountId, String nickname);
 }

@@ -22,7 +22,7 @@ public class BidderService {
     }
 
     private void checkIsExist(SignupRequest dto) {
-        if(bidderRepository.existsByAccountIdOOrNickname(dto.getAccountId(), dto.getNickname())) {
+        if(bidderRepository.existsByAccountIdOrNickname(dto.getAccountId(), dto.getNickname())) {
             throw new EntityExistsException();
         }
     }

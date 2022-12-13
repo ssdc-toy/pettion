@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/bidder")
+@RequestMapping("/api/bidders")
 public class BidderController {
     private final BidderService bidderService;
     @PostMapping
