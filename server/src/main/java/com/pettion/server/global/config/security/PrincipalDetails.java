@@ -1,6 +1,6 @@
-package com.bidbid.config.security;
+package com.pettion.server.global.config.security;
 
-import com.bidbid.entity.Member;
+import com.pettion.server.model.bidder.entity.Bidder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -9,9 +9,9 @@ import java.util.Collection;
 
 public class PrincipalDetails implements UserDetails {
 
-    private Member member;
+    private Bidder member;
 
-    public PrincipalDetails(Member member) {
+    public PrincipalDetails(Bidder member) {
         this.member = member;
     }
 
@@ -30,7 +30,7 @@ public class PrincipalDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return member.getEmail();
+        return member.getAccountId();
     }
 
     @Override

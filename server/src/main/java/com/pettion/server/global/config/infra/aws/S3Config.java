@@ -1,2 +1,4 @@
-package com.pettion.server.global.config.infra.aws;public class S3Config {
+package com.pettion.server.global.config.infra.aws;
+
+public class S3Config {
 }
