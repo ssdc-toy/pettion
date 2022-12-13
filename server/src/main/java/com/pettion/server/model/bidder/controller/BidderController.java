@@ -1,8 +1,8 @@
-package com.pettion.server.bidder.controller;
+package com.pettion.server.model.bidder.controller;
 
-import com.pettion.server.bidder.dto.request.SignupRequest;
-import com.pettion.server.bidder.dto.response.BidderResponse;
-import com.pettion.server.bidder.service.BidderService;
+import com.pettion.server.model.bidder.dto.request.SignupRequest;
+import com.pettion.server.model.bidder.dto.response.BidderResponse;
+import com.pettion.server.model.bidder.service.BidderService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

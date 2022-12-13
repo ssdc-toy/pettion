@@ -1,4 +1,4 @@
-package com.pettion.server.bidder.dto.request;
+package com.pettion.server.model.bidder.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
