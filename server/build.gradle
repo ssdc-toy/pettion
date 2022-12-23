@@ -18,10 +18,10 @@ configurations {
 
 jib {
     from {
-        image = "openjdk:17-jre-slim"
+        image = "openjdk:17-alpine"
     }
     to {
-        image = "phjppo0918/bidbid"
+        image = "phjppo0918/pettion-server"
         tags = ["latest"]
     }
     container {

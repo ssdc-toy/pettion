@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot
+spec:
+  selector:
+    matchLabels:
+      app: spring-boot
+      tier: app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: spring-boot
+        tier: app
+    spec:
+      containers:
+      - name: spring-boot
+        image: phjppo0918/spring-boot
+        ports:
+        - containerPort: 8080
