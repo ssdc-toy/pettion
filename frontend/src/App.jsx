@@ -1,5 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import axios from "axios";
+import Hello from "./axiossample/Hello";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (
@@ -16,6 +20,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+          <Hello />
         </a>
       </header>
     </div>

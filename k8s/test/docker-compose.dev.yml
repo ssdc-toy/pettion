@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  pettion-server:
+    image: phjppo0918/spring-boot
+    ports:
+      - 8080
+    expose:
+      - 8080
+    networks:
+      - app-tier
+
+  pettion-react:
+    image: phjppo0918/pettion-react
+    ports:
+      - 80:80
+    networks:
+      - app-tier
+    depends_on:
+      - pettion-server
+
+networks:
+  app-tier:
+    driver: bridge
