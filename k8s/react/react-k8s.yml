@@ -15,10 +15,11 @@ spec:
         tier: front
     spec:
       containers:
-      - name: pettion-react
-        image: phjppo0918/pettion-react
-        ports:
-        - containerPort: 80
+        - name: pettion-react
+          image: phjppo0918/pettion-react
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
 
 ---
 apiVersion: v1
@@ -31,5 +32,7 @@ spec:
     app: pettion-react
     tier: front
   ports:
-    - port: 80
-      nodePort: 30000
+    - port: 8083
+      targetPort: 80
+      protocol: TCP
+      nodePort: 31313
