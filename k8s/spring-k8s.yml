@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
         - name: pettion-server
-          image: phjppo0918/spring-boot
+          image: phjppo0918/pettion-server:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 

@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-server
+spec:
+  selector:
+    matchLabels:
+      app: mysql-server
+      component: mysql-server
+      tier: back
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mysql-server
+        component: mysql-server
+        tier: back
+    spec:
+      containers:
+        - name: mysql-server
+          image: mysql:latest
+          ports:
+            - containerPort: 3306
+          volumeFrom:
+            - mountPath: /var/lib/mysql
+              name: mysql-volume
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "1234"
+            - name: MYSQL_DATABASE
+              value: "pettion"
+      volumes:
+        - name: mysql-volume
+          hostPath:
+            path: /volume/data/pettion
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-server
+spec:
+  ports:
+    - name: mysql-server
+      port: 3306
+      targetPort: 3306
+      protocol: TCP
+  selector:
+    app: mysql-server
+    component: mysql-server
+  clusterIP: None
