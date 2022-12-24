@@ -21,7 +21,7 @@ spec:
           image: mysql:latest
           ports:
             - containerPort: 3306
-          volumeFrom:
+          volumeMounts:
             - mountPath: /var/lib/mysql
               name: mysql-volume
           env:

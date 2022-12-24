@@ -1,6 +1,4 @@
 resources:
-  - ./server/spring-k8s.yml
-  - ./react/react-k8s.yml
-  - ./database/mysql-k8s.yml
-
-  
+  - spring-k8s.yml
+  - react-k8s.yml
+  - mysql-k8s.yml
