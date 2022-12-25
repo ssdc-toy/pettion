@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pettion-react
+  labels:
+    app: pettion-react
+    tier: front
+spec:
+  selector:
+    matchLabels:
+      app: pettion-react
+      tier: front
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pettion-react
+        tier: front
+    spec:
+      containers:
+        - name: pettion-react
+          image: phjppo0918/pettion-react:latest
+          imagePullPolicy: Always
+          env:
+            - name: SERVER_URL
+              valueFrom:
+                secretKeyRef:
+                  name: database-secret
+                  key: server.url
+            - name: SERVER_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: database-secret
+                  key: server.port
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "1Gi"
+            limits:
+              cpu: "500m"
+              memory: "2Gi"
+          ports:
+            - containerPort: 80
