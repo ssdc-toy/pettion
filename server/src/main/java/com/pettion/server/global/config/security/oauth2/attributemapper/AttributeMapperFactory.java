@@ -6,6 +6,11 @@ import org.springframework.stereotype.Component;
 import java.util.EnumMap;
 import java.util.Map;
 
+/**
+ * 각 소셜 별로 Mapper을 생성해서 제공하는 Factory
+ *
+ * @author Hyeonjun Park
+ */
 @Component
 public class AttributeMapperFactory {
     private final Map<AuthProvider, AttributeMappable> mapperMap = new EnumMap<>(AuthProvider.class);
@@ -21,9 +26,9 @@ public class AttributeMapperFactory {
         initialize();
     }
     private void initialize() {
-        mapperMap.put(AuthProvider.GOOGLE,new GoogleAttributeMapper());
-        mapperMap.put(AuthProvider.KAKAO, new KakaoAttributeMapper());
-        mapperMap.put(AuthProvider.NAVER, new NaverAttributeMapper());
+        mapperMap.put(AuthProvider.GOOGLE, googleAttributeMapper);
+        mapperMap.put(AuthProvider.KAKAO, kakaoAttributeMapper);
+        mapperMap.put(AuthProvider.NAVER,naverAttributeMapper);
     }
 
     public AttributeMappable get(AuthProvider authProvider) {

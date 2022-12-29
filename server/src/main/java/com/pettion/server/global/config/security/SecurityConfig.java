@@ -22,6 +22,11 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+/**
+ * Spring Security 설정 빈
+ *
+ * @author Hyeonjun Park
+ */
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -65,6 +70,7 @@ public class SecurityConfig {
 
     /**
      * OAuth2 설정
+     * 꼭 chain 순서 변경 안하더라도, endpoint.userService 다음에 successHandler 수행
      *
      * @author Hyeonjun Park
      */
@@ -75,6 +81,11 @@ public class SecurityConfig {
                 .successHandler(successHandler);
     }
 
+    /**
+     * Cors 설정
+     *
+     * @author Hyeonjun Park
+     */
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();

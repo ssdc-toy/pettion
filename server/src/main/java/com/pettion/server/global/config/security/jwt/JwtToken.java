@@ -4,6 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+/**
+ * Jwt Token DTO
+ *
+ * @author Hyeonjun Park
+ */
 @Builder
 @Getter
 @AllArgsConstructor

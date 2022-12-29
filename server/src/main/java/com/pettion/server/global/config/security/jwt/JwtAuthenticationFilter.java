@@ -15,6 +15,12 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Optional;
 
+/**
+ * jwt토큰을 통한 인가 필터
+ * 매 요청시 마다 호출
+ *
+ * @Author Hyeonjun Park
+ */
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final String accessTokenHeaderTag;
@@ -25,8 +31,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         this.accessTokenHeaderTag = accessTokenHeaderTag;
         this.jwtValidator = jwtValidator;
     }
-
-
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -39,7 +43,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     }
 
     private String extractToken(Cookie[] cookies) {
-        if(cookies == null) {
+        if (cookies == null) {
             return null;
         }
 

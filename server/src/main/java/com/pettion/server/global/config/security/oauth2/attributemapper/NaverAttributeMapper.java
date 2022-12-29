@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+/**
+ * @author Hyeonjun Park
+ */
 @Component
 public class NaverAttributeMapper implements AttributeMappable {
     @Override

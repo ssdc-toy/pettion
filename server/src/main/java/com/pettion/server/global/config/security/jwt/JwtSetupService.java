@@ -29,6 +29,15 @@ public class JwtSetupService {
         this.refreshTokenHeaderTag = refreshTokenHeaderTag;
     }
 
+    /**
+     * 인증 login 값을 통해 token을 생성한 다음 클라이언트 쿠키에 저장
+     *
+     * @param response
+     * @param loginUser
+     *
+     * @author Hyeonjun Park
+     */
+
     public void addJwtTokensInCookie(HttpServletResponse response, LoginUser loginUser) {
         JwtToken jwtToken = jwtProvider.createJWTTokens(loginUser);
         Cookie accessTokenCookie = setCookie(accessTokenHeaderTag, jwtToken.getAccessToken());

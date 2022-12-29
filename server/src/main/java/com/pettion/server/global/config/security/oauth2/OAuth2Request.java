@@ -5,6 +5,9 @@ import lombok.Getter;
 
 import java.util.Optional;
 
+/**
+ * Oauth2 로그인 시 받아올 수 있는
+ */
 @Getter
 public class OAuth2Request {
     private String accountId;

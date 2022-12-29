@@ -3,6 +3,11 @@ package com.pettion.server.global.config.security.oauth2;
 import io.jsonwebtoken.Claims;
 import lombok.Getter;
 
+/**
+ * login 유저정보에 대한 dto
+ *
+ * @author Hyeonjun Park
+ */
 @Getter
 public class LoginUser {
     private Long id;

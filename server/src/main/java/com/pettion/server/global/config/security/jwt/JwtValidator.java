@@ -33,6 +33,14 @@ public class JwtValidator {
         return new UsernamePasswordAuthenticationToken(principal, "", authorities);
     }
 
+    /**
+     * 토큰 내의 Claim에서 사용자 권한 List 추출
+     *
+     * @param claims
+     * @return Collection<? extends GrantedAuthority>
+     *
+     * @author Hyeonjun Park
+     */
     private Collection<? extends GrantedAuthority> extractAuthority(Claims claims) {
         return bidderService.getAuthority(parseLong(claims));
     }

@@ -9,6 +9,11 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * attribute값을 dto로, user을 attribute로 변환해주는 클래스
+ *
+ * @author Hyeonjun Park
+ */
 @Component
 @RequiredArgsConstructor
 public class AttributeMapper {
