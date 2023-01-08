@@ -1,8 +1,8 @@
 package com.pettion.server.global.embedded;
 
-import jakarta.persistence.Embeddable;
 import lombok.Getter;
 
+import javax.persistence.Embeddable;
 import java.time.LocalDateTime;
 
 @Getter
